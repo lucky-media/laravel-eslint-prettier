@@ -1,7 +1,7 @@
 ## Laravel Inertia React Eslint Prettier Pint and Husky
 
 This is an opinionated starter tha we use for internal projects.
-I will write a blog post to go into detail on this setup but for now you can check this demo repo.
+[Here is the blog post explaining this setup](https://www.luckymedia.dev/blog/laravel-breeze-with-inertia-react-eslint-prettier-pint-and-husky)
 
 The stack is as follows:
 - Laravel Breeze
