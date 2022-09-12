@@ -7,56 +7,57 @@ import TextInput from '@/Components/TextInput';
 import { Head, useForm } from '@inertiajs/inertia-react';
 
 export default function ConfirmPassword() {
-    const { data, setData, post, processing, errors, reset } = useForm({
-        password: '',
-    });
+  const { data, setData, post, processing, errors, reset } = useForm({
+    password: '',
+  });
 
-    useEffect(() => {
-        return () => {
-            reset('password');
-        };
-    }, []);
-
-    const onHandleChange = (event) => {
-        setData(event.target.name, event.target.value);
+  useEffect(() => {
+    return () => {
+      reset('password');
     };
+  }, []);
 
-    const submit = (e) => {
-        e.preventDefault();
+  const onHandleChange = event => {
+    setData(event.target.name, event.target.value);
+  };
 
-        post(route('password.confirm'));
-    };
+  const submit = e => {
+    e.preventDefault();
 
-    return (
-        <GuestLayout>
-            <Head title="Confirm Password" />
+    post(route('password.confirm'));
+  };
 
-            <div className="mb-4 text-sm text-gray-600">
-                This is a secure area of the application. Please confirm your password before continuing.
-            </div>
+  return (
+    <GuestLayout>
+      <Head title="Confirm Password" />
 
-            <form onSubmit={submit}>
-                <div className="mt-4">
-                    <InputLabel forInput="password" value="Password" />
+      <div className="mb-4 text-sm text-gray-600">
+        This is a secure area of the application. Please confirm your password
+        before continuing.
+      </div>
 
-                    <TextInput
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        isFocused={true}
-                        handleChange={onHandleChange}
-                    />
+      <form onSubmit={submit}>
+        <div className="mt-4">
+          <InputLabel forInput="password" value="Password" />
 
-                    <InputError message={errors.password} className="mt-2" />
-                </div>
+          <TextInput
+            type="password"
+            name="password"
+            value={data.password}
+            className="mt-1 block w-full"
+            isFocused={true}
+            handleChange={onHandleChange}
+          />
 
-                <div className="flex items-center justify-end mt-4">
-                    <PrimaryButton className="ml-4" processing={processing}>
-                        Confirm
-                    </PrimaryButton>
-                </div>
-            </form>
-        </GuestLayout>
-    );
+          <InputError message={errors.password} className="mt-2" />
+        </div>
+
+        <div className="flex items-center justify-end mt-4">
+          <PrimaryButton className="ml-4" processing={processing}>
+            Confirm
+          </PrimaryButton>
+        </div>
+      </form>
+    </GuestLayout>
+  );
 }
