@@ -17,6 +17,7 @@ The stack is as follows:
 - Husky ( Git hooks )
 - Lint Staged and Pretty Quick - Formats the code before commit.
 - Laravel Pint
+- Laravel Ide Helper
 - Github Workflows for running the formatting again in case anything slipped.
 
 ### What about Vue.js
