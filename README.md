@@ -1,4 +1,4 @@
-## Laravel ESlint Prettier Pint and Husky
+## Laravel Inertia React Eslint Prettier Pint and Husky
 
 This is an opinionated starter tha we use for internal projects.
 I will write a blog post to go into detail on this setup but for now you can check this demo repo.
